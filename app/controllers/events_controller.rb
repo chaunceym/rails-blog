@@ -9,30 +9,38 @@ class EventsController < ApplicationController
   def new
     @event = Event.new 
   end
-  #POST /events/create
+  #POST /events
   def create
     @event = Event.new(event_params) 
     if @event.save
       flash[:notice] = "新增成功"
       # 重定向，提交资料后
-      redirect_to :action => :index
+      redirect_to events_path
     else
       render :action => :new 
     end  
-  end # /events/show/:id def show @page_title = @event.name end # /events/edit/:id def edit end # /events/update/:id
+  end
+  # GET /events/:id 
+  def show 
+    @page_title = @event.name 
+  end 
+  # POST /events/:id/edit 
+  def edit
+  end 
+  # PATCH /events/:id
   def update
     if @event.update(event_params)
       flash[:notice] = "更新成功"
-      redirect_to :action => :show ,:id => @event
+      redirect_to event_path(@event)
     else
       render :action => :edit
     end
   end
-  # /events/destroy/:id
+  # DELETE /events/:id
   def destroy
     @event.destroy
       flash[:alert] = "删除成功"
-    redirect_to :action => :index
+    redirect_to events_path
   end
   # 因为表单提交有安全隐患，定制一个私有方法来控制表单提交的条件
   private 

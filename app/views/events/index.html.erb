@@ -5,14 +5,13 @@
 <% @events.each do |e| %>
   <li>
     <%=e.name  %>
-
-    <%= link_to "Show", :controller => 'events',:action => "show", :id => e  %>
-    <%= link_to "Edit", :controller => 'events',:action => "edit", :id => e  %>
-    <%= link_to "Delete", :controller => 'events',:action => "destroy", :id => e  %>
+    <%= link_to "Show", event_path(e),:method => :get%>
+    <%= link_to "Edit", edit_event_path(e)%>
+    <%= link_to "Delete", event_path(e), :method => :delete%> 
   </li>
 <% end %>
 </ul>
 
-<%= link_to 'New Event', :controller => 'events', :action => 'new' %>
+<%= link_to 'New Event', new_event_path%>
 
 <%= paginate @events %>
