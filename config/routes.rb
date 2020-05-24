@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   get "/welcome" => 'welcome#index'
   root "welcome#index"
   resources :events
-  match ':controller(/:action(/:id(.:format)))', :via => :all
 end
