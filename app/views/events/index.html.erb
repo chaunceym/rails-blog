@@ -5,7 +5,9 @@
 <% @events.each do |e| %>
   <li>
     <%=e.name  %>
-    <%= link_to "Show", event_path(e),:method => :get%>
+    <%= link_to "Show", event_path(e)%>
+    <%= link_to "Get xml", event_path(e,:format => :xml)%>
+    <%= link_to "Get json", event_path(e,:format => :json)%>
     <%= link_to "Edit", edit_event_path(e)%>
     <%= link_to "Delete", event_path(e), :method => :delete%> 
   </li>
