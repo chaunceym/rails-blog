@@ -1,4 +1,11 @@
 <h1><%= @event.name %></h1>
+<ul>
+  <% @event.groups.each do |g| %>
+    <li>
+      <h3>group: <%= g.name %></h3>
+    </li>
+  <% end %>
+</ul>
 <h3>category: <%= @event.category_name %></h3>
 <h3><span>description:</span><%= simple_format @event.description %></h3>
 <%= link_to 'Back to Index', events_path, :class => 'btn btn-primary' %>

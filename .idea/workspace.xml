@@ -25,16 +25,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec16e94-9819-44f6-8ab3-15d107d7333e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/event_groupship.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/group.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20200525114800_create_groups.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20200525114830_create_event_groupships.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/event_groupships.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/groups.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/event_groupship_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/group_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/event.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/event.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/events/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/events/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,29 +59,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunManager" selected="Rails.Development: demo">
-    <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
-      <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
-      <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
-      <RACK_CONFIG_SETTINGS_ID NAME="CONFIG_FILE" VALUE="config.ru" />
-      <RACK_CONFIG_SETTINGS_ID NAME="RACK_SERVER_TYPE" VALUE="Default" />
-      <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="Development: demo" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="demo" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -201,7 +175,8 @@
       <workItem from="1590403263472" duration="132000" />
       <workItem from="1590403691507" duration="335000" />
       <workItem from="1590404142895" duration="1714000" />
-      <workItem from="1590407200631" duration="1565000" />
+      <workItem from="1590407200631" duration="2770000" />
+      <workItem from="1590410778475" duration="507000" />
     </task>
     <servers />
   </component>
@@ -232,14 +207,18 @@
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="494" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.34.1853.1046@67.34.1853.1046" timestamp="1590403293748" />
+    <state width="306" height="242" key="DatabaseViewActions_Filter" timestamp="1590411070989">
+      <screen x="67" y="34" width="1853" height="1046" />
+    </state>
+    <state width="306" height="242" key="DatabaseViewActions_Filter/67.34.1853.1046@67.34.1853.1046" timestamp="1590411070989" />
     <state x="695" y="258" key="FileChooserDialogImpl" timestamp="1590407197281">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
     <state x="695" y="258" key="FileChooserDialogImpl/67.34.1853.1046@67.34.1853.1046" timestamp="1590407197281" />
-    <state x="335" y="104" width="1316" height="912" key="SettingsEditor" timestamp="1590408896676">
+    <state x="335" y="104" width="1316" height="912" key="SettingsEditor" timestamp="1590411267650">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
-    <state x="335" y="104" width="1316" height="912" key="SettingsEditor/67.34.1853.1046@67.34.1853.1046" timestamp="1590408896676" />
+    <state x="335" y="104" width="1316" height="912" key="SettingsEditor/67.34.1853.1046@67.34.1853.1046" timestamp="1590411267650" />
     <state x="544" y="45" width="897" height="1034" key="search.everywhere.popup" timestamp="1590408756059">
       <screen x="67" y="34" width="1853" height="1046" />
     </state>
