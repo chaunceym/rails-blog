@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get "/welcome/hello" => 'welcome#say'
   get "/welcome" => 'welcome#index'
   root "welcome#index"
-  resources :events
+  resources :events do
+    resources :attendees, :controller => 'event_attendees'
+  end
 end
