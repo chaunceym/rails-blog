@@ -17,6 +17,10 @@ class EventsController < ApplicationController
         @feed_title = "My event list" }
     end
   end
+
+  def latest
+    @events = Event.order("id DESC").limit(3)
+  end
   #GET /events/new
   def new
     @event = Event.new 

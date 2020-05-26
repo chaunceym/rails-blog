@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :events do
     resources :attendees, :controller => 'event_attendees'
+
+    collection  do 
+      get :latest
+    end
   end
 end
