@@ -1,8 +1,26 @@
 <h1>Events list</h1>
 <p><%= link_to "Latest events", latest_events_path %></p>
-<%= link_to 'New Event', new_event_path, :class=>'btn btn-primary'%>
+
+<%= form_for @event do |f| %>
+  <%= render :partial => "form", :locals => {:f=>f} %>
+  <%= f.submit "Save", :class => "btn btn-primary" %>
+  <%= link_to "Cancel", events_path, :class=>"btn btn-default" %>
+<% end %>
+
+<br>
+
+<%= form_tag events_path, :method => :get do  %>
+<%= text_field_tag "keyword" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<br>
+
 
 <%= form_tag bulk_update_events_path do %>
+
+  <%= link_to "Sort by Name",events_path(:order => "name") %>
+  <%= link_to "Sort by Default",events_path %>
 <table class="table"> 
 <% @events.each do |e| %>
   <tr>
@@ -12,6 +30,7 @@
     </td>
     <td>
     <%= link_to "Show", event_path(e), :class => "btn btn-primary"%>
+    <%= link_to "Dashboard", dashboard_event_path(e), :class => "btn btn-primary"%>
     <%= link_to "Attendee List" , event_attendees_path(e), :class => 'btn btn-primary'%>
     <%= link_to "Get xml", event_path(e,:format => :xml), :class => "btn btn-default"%>
     <%= link_to "Get json", event_path(e,:format => :json), :class => "btn btn-default"%>

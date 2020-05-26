@@ -1,10 +1,21 @@
 class EventsController < ApplicationController
-  before_action :set_event, :only => [:show,:edit,:update,:destroy]
+  before_action :set_event, :only => [:show,:edit,:update,:destroy,:dashboard]
   # GET /events/index
   # Get /events
   def index
-    @events = Event.page(params[:page]).per(10)
+    if params[:keyword]
+      @events = Event.where(["name like ?", "%#{params[:keyword]}%"])
+    else
+      @events = Event.all
+    end
 
+    if params[:order]
+      sort_by = (params[:order] == "name") ? "name" : "id"
+      @events = @events.order(sort_by)
+    end
+
+    @events = @events.page(params[:page]).per(10)
+    @event = Event.new 
     respond_to do |format| 
       format.html
       format.xml {
@@ -31,10 +42,6 @@ class EventsController < ApplicationController
     end
     redirect_to events_path
   end
-  #GET /events/new
-  def new
-    @event = Event.new 
-  end
   #POST /events
   def create
     @event = Event.new(event_params) 
@@ -60,6 +67,10 @@ class EventsController < ApplicationController
       }
     end
   end 
+
+  def dashboard
+
+  end
   # POST /events/:id/edit 
   def edit
   end 
