@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
+gem 'paperclip'
+gem 'aws-sdk'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'pg', group: :production
