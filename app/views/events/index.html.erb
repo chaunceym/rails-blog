@@ -1,5 +1,6 @@
 <h1>Events list</h1>
 <p><%= link_to "Latest events", latest_events_path %></p>
+<%= link_to 'New Event', new_event_path, :class=>'btn btn-primary'%>
 <table class="table"> 
 <% @events.each do |e| %>
   <tr>
@@ -18,6 +19,8 @@
 <% end %>
 </table>
 
-<%= link_to 'New Event', new_event_path, :class=>'btn btn-primary'%>
+<%= button_to "Delete All", bulk_delete_events_path%>
 
 <%= paginate @events %>
+
+
