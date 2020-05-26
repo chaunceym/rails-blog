@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_114830) do
+ActiveRecord::Schema.define(version: 2020_05_26_045946) do
 
   create_table "attendees", force: :cascade do |t|
     t.string "name"
@@ -44,7 +44,9 @@ ActiveRecord::Schema.define(version: 2020_05_25_114830) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
     t.integer "category_id"
+    t.integer "user_id"
     t.index ["category_id"], name: "index_events_on_category_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -59,6 +61,20 @@ ActiveRecord::Schema.define(version: 2020_05_25_114830) do
     t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

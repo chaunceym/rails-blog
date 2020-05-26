@@ -19,7 +19,7 @@
 
 <%= form_tag bulk_update_events_path do %>
 
-  <%= link_to "Sort by Name",events_path(:order => "name") %>
+  <%= link_to "Sort by Name",events_path(:order => "name") %> |
   <%= link_to "Sort by Default",events_path %>
 <table class="table"> 
 <% @events.each do |e| %>
@@ -27,6 +27,9 @@
     <td>
       <%= check_box_tag "ids[]", e.id, false %>
     <%=e.name  %>
+    </td>
+    <td>
+    <%= e.user.try(:short_name)  %>
     </td>
     <td>
     <%= link_to "Show", event_path(e), :class => "btn btn-primary"%>
