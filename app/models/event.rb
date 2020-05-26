@@ -1,9 +1,8 @@
 class Event < ApplicationRecord
   validates_presence_of :name
   has_many :attendees
-  belongs_to :user
-  belongs_to :category
-
+  belongs_to :category, :optional => true
+  belongs_to :user, :optional => true 
   delegate :name, :to => :category, :prefix => true,:allow_nil => true
 
   has_many :event_groupships
