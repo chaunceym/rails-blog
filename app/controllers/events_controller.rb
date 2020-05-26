@@ -21,8 +21,14 @@ class EventsController < ApplicationController
   def latest
     @events = Event.order("id DESC").limit(3)
   end
-  def bulk_delete
-    Event.destroy_all
+  def bulk_update
+    ids = Array(params[:ids])
+    events = ids.map{ |i| Event.find_by_id(i) }.compact
+    if params[:commit] == "Delete"
+      events.each{|e| e.destroy}
+    elsif params[:commit] == "Publish"
+      events.each{|e| e.update(:status => "published")}
+    end
     redirect_to events_path
   end
   #GET /events/new
@@ -78,6 +84,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
   def event_params
-    params.require(:event).permit(:name,:description, :category_id,:group_ids => [])
+    params.require(:event).permit(:name,:description, :category_id,:status,:group_ids => [])
   end
 end
